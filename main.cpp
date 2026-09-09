@@ -4,6 +4,8 @@ using namespace std;
 int main() {
     int n;
     double scores[20];
+    int pass = 0;
+    int fail = 0;
 
     cout << "How many students? ";
     cin >> n;
@@ -13,17 +15,21 @@ int main() {
         cin >> scores[i];
     }
 
-    cout << "===== RESULTS =====" << endl;
-
     for (int i = 0; i < n; i++) {
-        cout << "Student " << i + 1 << ": " << scores[i];
-
         if (scores[i] >= 5) {
-            cout << " -> PASS" << endl;
+            pass++;
         } else {
-            cout << " -> FAIL" << endl;
+            fail++;
         }
     }
+
+    cout << "===== STATISTICS =====" << endl;
+    cout << "Passed: " << pass << " students" << endl;
+    cout << "Failed: " << fail << " students" << endl;
+
+    double passRate = (double)pass / n * 100;
+
+    cout << "Pass rate: " << passRate << "%" << endl;
 
     return 0;
 }
