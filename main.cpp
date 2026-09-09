@@ -13,10 +13,16 @@ int main() {
         cin >> scores[i];
     }
 
-    cout << "===== STUDENT SCORES =====" << endl;
+    cout << "===== RESULTS =====" << endl;
 
     for (int i = 0; i < n; i++) {
-        cout << "Student " << i + 1 << ": " << scores[i] << endl;
+        cout << "Student " << i + 1 << ": " << scores[i];
+
+        if (scores[i] >= 5) {
+            cout << " -> PASS" << endl;
+        } else {
+            cout << " -> FAIL" << endl;
+        }
     }
 
     return 0;
