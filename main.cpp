@@ -9,15 +9,14 @@ int main() {
     cin >> n;
 
     for (int i = 0; i < n; i++) {
-        do {
-            cout << "Enter score for student " << i + 1 << ": ";
-            cin >> scores[i];
+        cout << "Enter score for student " << i + 1 << ": ";
+        cin >> scores[i];
+    }
 
-            if (scores[i] < 0 || scores[i] > 10) {
-                cout << "Invalid score! Please enter a value from 0 to 10." << endl;
-            }
+    cout << "===== STUDENT SCORES =====" << endl;
 
-        } while (scores[i] < 0 || scores[i] > 10);
+    for (int i = 0; i < n; i++) {
+        cout << "Student " << i + 1 << ": " << scores[i] << endl;
     }
 
     return 0;
