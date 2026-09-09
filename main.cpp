@@ -13,21 +13,25 @@ int main() {
         cin >> scores[i];
     }
 
-    double highest = scores[0];
-    double lowest = scores[0];
+    cout << "===== CLASSIFICATION =====" << endl;
 
-    for (int i = 1; i < n; i++) {
-        if (scores[i] > highest) {
-            highest = scores[i];
+    for (int i = 0; i < n; i++) {
+        cout << "Student " << i + 1 << ": " << scores[i] << " -> ";
+
+        if (scores[i] >= 9) {
+            cout << "Excellent";
+        } else if (scores[i] >= 8) {
+            cout << "Very Good";
+        } else if (scores[i] >= 6.5) {
+            cout << "Good";
+        } else if (scores[i] >= 5) {
+            cout << "Average";
+        } else {
+            cout << "Fail";
         }
 
-        if (scores[i] < lowest) {
-            lowest = scores[i];
-        }
+        cout << endl;
     }
-
-    cout << "Highest score: " << highest << endl;
-    cout << "Lowest score: " << lowest << endl;
 
     return 0;
 }
