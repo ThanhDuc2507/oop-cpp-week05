@@ -2,36 +2,16 @@
 using namespace std;
 
 int main() {
-    int n;
-    double scores[20];
+    float scores[10] = {7.5, 8.0, 6.5, 9.5, 7.0, 9.0, 5.5, 7.5, 8.5, 4.5};
+    int count = 0;
 
-    cout << "How many students? ";
-    cin >> n;
-
-    for (int i = 0; i < n; i++) {
-        cout << "Enter score for student " << i + 1 << ": ";
-        cin >> scores[i];
-    }
-
-    cout << "===== CLASSIFICATION =====" << endl;
-
-    for (int i = 0; i < n; i++) {
-        cout << "Student " << i + 1 << ": " << scores[i] << " -> ";
-
-        if (scores[i] >= 9) {
-            cout << "Excellent";
-        } else if (scores[i] >= 8) {
-            cout << "Very Good";
-        } else if (scores[i] >= 6.5) {
-            cout << "Good";
-        } else if (scores[i] >= 5) {
-            cout << "Average";
-        } else {
-            cout << "Fail";
+    for (int i = 0; i < 10; i++) {
+        if (scores[i] >= 9.0) {
+            count++;
         }
-
-        cout << endl;
     }
+
+    cout << "Number of excellent students: " << count;
 
     return 0;
 }
