@@ -3,20 +3,22 @@ using namespace std;
 
 int main() {
     float scores[10] = {7.5, 8.0, 6.5, 9.5, 7.0, 9.0, 5.5, 7.5, 8.5, 4.5};
-    float highest = scores[0];
-    float secondHighest = -1;
+    float x;
+    bool found = false;
 
-    for (int i = 1; i < 10; i++) {
-        if (scores[i] > highest) {
-            secondHighest = highest;
-            highest = scores[i];
-        } else if (scores[i] > secondHighest && scores[i] < highest) {
-            secondHighest = scores[i];
+    cout << "Enter score to search: ";
+    cin >> x;
+
+    for (int i = 0; i < 10; i++) {
+        if (scores[i] == x) {
+            cout << "Student " << i + 1 << endl;
+            found = true;
         }
     }
 
-    cout << "Highest score: " << highest << endl;
-    cout << "Second highest score: " << secondHighest;
+    if (!found) {
+        cout << "Score not found";
+    }
 
     return 0;
 }
